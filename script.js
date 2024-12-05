@@ -19,8 +19,8 @@ let getWeather = (city) => {
       console.log(data); // Traiter les données
       //Extraire les données nécessaires de la reponse json
       const location = `${data.name}, ${data.sys.country}`; // Extraire le nom de la ville ainsi que la pays
-      const description = data.weather[0].description; //description de la température
-      const temperature = `${data.main.temp}°C`; //Extraire la température
+      const description = data.weather[0].description ; //description de la température
+      const temperature = `${(data.main.temp-273).toFixed(2)}°C`; //Extraire la température
 
       //mettre a jour le contenu html avec les données récupérrés
       document.getElementById("location").textContent = location;
